@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>三十六计 · 孙子兵法｜原文 · 释义 · 案例</title>
+<meta name="description" content="三十六计与孙子兵法全文查阅：每条计谋、每篇兵法均配原文、释义、经典战例与现代用法，点击即可跳转。">
+<style>
+:root{
+  --paper:#f7f3ea; --paper-2:#fffdf7; --paper-3:#f1ebdd;
+  --ink:#211d19; --ink-2:#544c41; --ink-3:#8a8175;
+  --line:#e3d9c7; --red:#a63a2b; --red-soft:#f4e4de;
+  --gold:#b08d57; --teal:#33565c;
+  --kai:"Kaiti SC","KaiTi","STKaiti","楷体",serif;
+  --song:"Songti SC","SimSun","Noto Serif SC","宋体",serif;
+  --sans:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;font-size:15px}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+
+.app{display:flex;min-height:100vh}
+
+/* ---------- 侧栏 ---------- */
+.sidebar{width:272px;flex:0 0 272px;height:100vh;position:sticky;top:0;overflow-y:auto;background:var(--paper-3);border-right:1px solid var(--line);padding:20px 0 48px;z-index:60}
+.sidebar::-webkit-scrollbar{width:6px}
+.sidebar::-webkit-scrollbar-thumb{background:#d8cdb8;border-radius:3px}
+.brand{display:flex;gap:12px;align-items:center;padding:0 18px 18px;border-bottom:1px solid var(--line);margin-bottom:10px}
+.seal-big{width:42px;height:42px;flex:0 0 42px;background:var(--red);color:#fff8f2;font-family:var(--kai);font-size:24px;display:flex;align-items:center;justify-content:center;border-radius:5px;line-height:1}
+.brand strong{display:block;font-size:15px;font-weight:600;letter-spacing:.5px}
+.brand em{display:block;font-style:normal;font-size:11px;color:var(--ink-3);margin-top:4px;letter-spacing:2px}
+.navgroup{display:flex;justify-content:space-between;align-items:center;padding:16px 18px 6px;font-size:11.5px;letter-spacing:2px;color:var(--ink-3)}
+.navgroup b{font-weight:400;font-size:10.5px;color:#b3a892}
+.navgroup a{color:inherit;transition:color .15s}
+.navgroup a:hover,.navgroup a.on{color:var(--red)}
+.navsub{padding:12px 18px 3px;font-size:11px;color:var(--red);letter-spacing:1.5px;opacity:.9}
+.navlink{display:flex;gap:9px;align-items:baseline;padding:6px 18px;font-size:13.5px;color:var(--ink-2);border-left:2px solid transparent;line-height:1.5}
+.navlink:hover{background:rgba(166,58,43,.06);color:var(--ink)}
+.navlink.on{color:var(--red);background:rgba(166,58,43,.08);border-left-color:var(--red);font-weight:500}
+.navlink .no{font-size:10.5px;color:#b3a892;min-width:20px;font-variant-numeric:tabular-nums}
+.navlink.on .no{color:var(--red)}
+.navlink .nm{font-family:var(--kai);font-size:14.5px;letter-spacing:1px}
+
+/* ---------- 顶栏 ---------- */
+main{flex:1;min-width:0;display:flex;flex-direction:column}
+.topbar{position:sticky;top:0;z-index:30;display:flex;gap:12px;align-items:center;padding:11px 26px;background:rgba(247,243,234,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.burger{display:none;width:36px;height:36px;border:1px solid var(--line);background:var(--paper-2);border-radius:8px;cursor:pointer;align-items:center;justify-content:center;font-size:15px;color:var(--ink-2)}
+.search{flex:1;max-width:440px;position:relative}
+#q{width:100%;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper-2);font-size:13.5px;color:var(--ink);outline:none;font-family:inherit}
+#q:focus{border-color:var(--red)}
+.tbtools{margin-left:auto;display:flex;gap:8px;align-items:center}
+.btn{border:1px solid var(--line);background:var(--paper-2);color:var(--ink-2);padding:8px 14px;border-radius:999px;font-size:12.5px;cursor:pointer;letter-spacing:.5px}
+.btn:hover{border-color:var(--red);color:var(--red)}
+
+/* ---------- 内容 ---------- */
+.wrap{max-width:840px;margin:0 auto;padding:36px 30px 90px;width:100%}
+@media(min-width:1500px){.wrap{max-width:920px}}
+
+.hero{padding:20px 0 8px;border-bottom:1px solid var(--line)}
+.hero .kicker{font-size:11.5px;letter-spacing:4px;color:var(--red);margin-bottom:14px}
+.hero h1{font-family:var(--song);font-size:38px;line-height:1.25;margin:0 0 14px;font-weight:600;letter-spacing:2px}
+.hero h1 span{color:var(--ink-3);font-size:26px;margin:0 10px;font-weight:400}
+.hero p{margin:0 0 18px;font-size:14.5px;line-height:1.9;color:var(--ink-2);max-width:640px}
+.stats{display:flex;gap:28px;padding:16px 0 22px;flex-wrap:wrap}
+.stat b{display:block;font-family:var(--song);font-size:22px;color:var(--red);font-weight:600;line-height:1.2}
+.stat span{font-size:11.5px;color:var(--ink-3);letter-spacing:1px}
+
+.setsec{margin-top:46px}
+.sethead{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.sethead h2{font-family:var(--song);font-size:20px;margin:0;font-weight:600;letter-spacing:2px}
+.sethead .idx{font-size:11.5px;color:var(--red);letter-spacing:2px}
+.sethead p{margin:0 0 0 auto;font-size:12px;color:var(--ink-3)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(192px,1fr));gap:13px;margin-top:18px}
+.card{display:block;position:relative;padding:16px 16px 15px;background:var(--paper-2);border:1px solid var(--line);border-radius:10px;transition:transform .16s ease,border-color .16s,box-shadow .16s}
+.card:hover{transform:translateY(-2px);border-color:#d2c2a8;box-shadow:0 8px 20px rgba(70,52,28,.07)}
+.card .no{position:absolute;top:13px;right:13px;font-size:10.5px;color:#c6b69b;font-variant-numeric:tabular-nums}
+.card .nm{display:block;font-family:var(--kai);font-size:20px;letter-spacing:2px;margin-bottom:9px;color:var(--ink)}
+.card .sub{display:block;font-size:12px;line-height:1.65;color:var(--ink-3);min-height:2.6em}
+.card .tag{display:inline-block;margin-top:10px;font-size:10.5px;color:var(--teal);letter-spacing:1px}
+
+/* ---------- 详情 ---------- */
+.crumb{font-size:12px;color:var(--ink-3);letter-spacing:.5px;margin-bottom:24px}
+.crumb a:hover{color:var(--red)}
+.crumb span{margin:0 7px;color:#c6b69b}
+
+.titleblock{display:flex;gap:18px;align-items:flex-start;padding-bottom:24px;border-bottom:2px solid var(--ink)}
+.seal{width:52px;height:52px;flex:0 0 52px;background:var(--red);color:#fff8f2;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:600;border-radius:6px;font-variant-numeric:tabular-nums;line-height:1}
+.tb h1{font-family:var(--song);font-size:33px;margin:0 0 8px;font-weight:600;letter-spacing:5px;line-height:1.2}
+.tb .meta{font-size:12px;color:var(--ink-3);letter-spacing:1.5px}
+.tb .meta b{color:var(--red);font-weight:500}
+
+.section{margin-top:36px}
+.section h2{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:4px;color:var(--red);font-weight:600;margin:0 0 16px}
+.section h2:after{content:'';height:1px;flex:1;background:var(--line)}
+.section p{margin:0 0 12px;font-size:15.5px;line-height:1.98;color:#332d26}
+.section p:last-child{margin-bottom:0}
+
+.orig{background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:24px 26px;position:relative}
+.orig:before{content:'原文';position:absolute;top:-9px;left:22px;background:var(--paper);padding:0 8px;font-size:11px;letter-spacing:3px;color:var(--ink-3)}
+.orig p{font-family:var(--kai);font-size:19.5px;line-height:2.15;letter-spacing:1.5px;color:#241f19;margin:0}
+.orig p+p{margin-top:10px;font-family:var(--sans);font-size:13.5px;line-height:1.9;color:var(--ink-3);letter-spacing:0}
+
+.case{background:var(--paper-2);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:8px;padding:20px 22px}
+.case+.case{margin-top:14px}
+.case h3{margin:0 0 5px;font-family:var(--kai);font-size:17px;font-weight:500;letter-spacing:1.5px;color:#2b251e}
+.case .src{font-size:11.5px;color:var(--ink-3);margin-bottom:12px;letter-spacing:.5px}
+.case p{margin:0;font-size:14.5px;line-height:1.95;color:#3a332b}
+
+.quoteblock{border-left:2px solid var(--red);padding:4px 0 4px 20px}
+.quoteblock p{font-family:var(--kai);font-size:18px;line-height:2;color:#241f19;letter-spacing:1px}
+
+ul.pts{margin:0;padding:0;list-style:none}
+ul.pts li{position:relative;padding-left:20px;margin-bottom:11px;font-size:15px;line-height:1.85;color:#332d26}
+ul.pts li:before{content:'';position:absolute;left:2px;top:12px;width:6px;height:6px;border:1px solid var(--red);border-radius:50%}
+
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:56px;padding-top:22px;border-top:1px solid var(--line)}
+.pager a{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--ink-3);max-width:46%}
+.pager a:hover .pn{color:var(--red)}
+.pager .pn{font-family:var(--kai);font-size:16px;color:var(--ink);letter-spacing:1.5px}
+.pager .right{text-align:right;align-items:flex-end;margin-left:auto}
+
+.empty{padding:80px 0;text-align:center;color:var(--ink-3);font-size:14px}
+
+footer{border-top:1px solid var(--line);margin-top:70px;padding:26px 0 8px;font-size:12px;line-height:1.9;color:var(--ink-3)}
+footer b{color:var(--ink-2);font-weight:500}
+
+.scrim{display:none;position:fixed;inset:0;background:rgba(33,29,25,.35);z-index:55}
+
+@media(max-width:900px){
+  .sidebar{position:fixed;left:0;top:0;transform:translateX(-101%);transition:transform .26s ease;box-shadow:6px 0 24px rgba(40,30,15,.14)}
+  .sidebar.open{transform:none}
+  .scrim.on{display:block}
+  .burger{display:flex}
+  .topbar{padding:10px 16px}
+  .wrap{padding:24px 18px 70px}
+  .hero h1{font-size:30px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+  .card .nm{font-size:18px}
+  .tb h1{font-size:26px;letter-spacing:3px}
+  .orig p{font-size:17.5px}
+  .stats{gap:18px}
+  .tbtools .btn{display:none}
+}
+@media print{
+  .sidebar,.topbar,.pager,.scrim{display:none}
+  body{background:#fff}
+  .wrap{max-width:none}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="seal-big">兵</div>
+      <div>
+        <strong>三十六计 · 孙子兵法</strong>
+        <em>原文 释义 案例</em>
+      </div>
+    </div>
+    <nav id="nav"></nav>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <main>
+    <div class="topbar">
+      <button class="burger" id="burger" aria-label="目录">☰</button>
+      <div class="search">
+        <input id="q" type="search" placeholder="搜索计名、篇名或关键词，如：围魏救赵、用间、火攻" autocomplete="off">
+      </div>
+      <div class="tbtools">
+        <button class="btn" id="random">随机一计</button>
+      </div>
+    </div>
+    <div id="view"></div>
+  </main>
+</div>
+
+<script src="data36.js"></script>
+<script src="data13.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
